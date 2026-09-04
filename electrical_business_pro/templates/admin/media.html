@@ -1,0 +1,16 @@
+{% extends 'admin/layout.html' %}{% block admin %}
+<h1>Media Gallery</h1>
+<div class="card"><form method="post" enctype="multipart/form-data" class="form">
+<input name="title" placeholder="Title / caption">
+<input name="file" type="file" accept="image/*,video/*" required>
+<label><input type="checkbox" name="active" checked> Show on website</label>
+<button class="btn">Upload Image / Video</button>
+</form></div><br>
+<div class="grid">
+{% for x in items %}<div class="card">
+{% if x.media_type=='image' %}<img class="projectimg" src="{{url_for('static',filename='uploads/'+x.filename)}}">{% else %}<video class="projectimg" controls preload="metadata"><source src="{{url_for('static',filename='uploads/'+x.filename)}}"></video>{% endif %}
+<h3>{{x.title or 'Media'}}</h3><p class="muted">{{x.media_type|capitalize}} · {% if x.active %}Visible{% else %}Hidden{% endif %}</p>
+<form method="post" action="{{url_for('media_delete',id=x.id)}}"><button class="btn danger">Delete</button></form>
+</div>{% else %}<div class="card"><p>No images or videos uploaded yet.</p></div>{% endfor %}
+</div>
+{% endblock %}

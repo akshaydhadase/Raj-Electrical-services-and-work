@@ -1,0 +1,17 @@
+{% extends 'admin/layout.html' %}{% block admin %}
+<h1>Company Profile & Contact</h1>
+<div class="card"><form method="post" class="form">
+<label>Company Name<input name="company_name" value="{{s.company_name}}" required></label>
+<label>Tagline<input name="tagline" value="{{s.tagline}}"></label>
+<label>Phone / Contact Number<input name="phone" value="{{s.phone}}"></label>
+<label>Email<input type="email" name="email" value="{{s.email}}"></label>
+<label>Instagram<input name="instagram" value="{{s.instagram}}"></label>
+<label>WhatsApp Number<input name="whatsapp" value="{{s.whatsapp}}"></label>
+<label>Business Address<textarea name="address">{{s.address}}</textarea></label>
+<label>About Company<textarea name="about">{{s.about}}</textarea></label>
+<label>Hero Title<input name="hero_title" value="{{s.hero_title}}"></label>
+<label>Hero Text<textarea name="hero_text">{{s.hero_text}}</textarea></label>
+<button class="btn">Save Company Profile</button>
+</form></div>
+<p class="muted">Tip: use the <b>Media Gallery</b> menu to upload company photos and videos from Admin.</p>
+{% endblock %}
