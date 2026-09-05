@@ -254,5 +254,5 @@ def customer_report(): return excel([[c.name,c.phone,c.email,c.company,c.status,
 
 if __name__=='__main__':
  with app.app_context(): seed()
- print('Customer: http://127.0.0.1:5000'); print('Admin: http://127.0.0.1:5000/admin/login'); print('Login: admin / admin123')
+ print('Customer: http://127.0.0.1:5000'); print('Admin: http://127.0.0.1:5000/admin/login'); #print('Login: admin / admin123')
  app.run(debug=True,host='127.0.0.1',port=5000)
