@@ -53,7 +53,7 @@ def dt(v):
 
 def seed():
  db.create_all()
- if not Admin.query.first(): db.session.add(Admin(username='admin',password_hash=generate_password_hash('admin123')))
+ if not Admin.query.first(): db.session.add(Admin(username='ujwaladhadase',password_hash=generate_password_hash('Umesh@dh#99')))
  site()
  if not Service.query.first(): db.session.add_all([Service(title='Industrial Electrical Work',description='Panels, wiring, installation and maintenance.',icon='🏭'),Service(title='Commercial Electrical',description='Office, shop and commercial electrical solutions.',icon='🏢'),Service(title='Tender & Project Support',description='Tender tracking, quotations and project support.',icon='📋'),Service(title='Electrical Maintenance',description='Preventive maintenance and troubleshooting.',icon='🛠️')])
  if not Product.query.first(): db.session.add_all([Product(code='CB-001',name='MCB Circuit Breaker',brand='Demo Brand',price=450,stock=50,min_stock=10),Product(code='CAB-001',name='Copper Cable',brand='Demo Brand',price=1200,stock=25,min_stock=5)])
